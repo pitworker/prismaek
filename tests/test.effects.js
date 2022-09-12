@@ -1,8 +1,15 @@
 "use strict";
 
+import { Effects } from "../index.js";
+/*
 const {
   effects: { shade, tint, tone },
 } = require("../index");
+*/
+
+const shade = Effects.shade;
+const tint = Effects.tint;
+const tone = Effects.tone;
 
 describe("Shades", () => {
   test("should return shades of a singular base color, given the step size and count of shades", () => {

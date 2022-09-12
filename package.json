@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Generate colors and color schemes using maths.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "npm run lint && npm run jest",
     "jest": "jest --verbose ./tests/",

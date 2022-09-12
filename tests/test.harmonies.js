@@ -1,10 +1,11 @@
 "use strict";
 
-const { harmonies } = require("../index");
+import { Harmonies } from "../index.js";
+//const { harmonies } = require("../index");
 
 describe("Harmony", () => {
   test("complementary should return an array of complentary colors, defaulting to HSV.", () => {
-    const { complementary } = harmonies;
+    const { complementary } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -18,7 +19,7 @@ describe("Harmony", () => {
   });
 
   test("complementary should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { complementary } = harmonies;
+    const { complementary } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -32,7 +33,7 @@ describe("Harmony", () => {
   });
 
   test("complementary should throw when passed invalid arguments.", () => {
-    const { complementary } = harmonies;
+    const { complementary } = Harmonies;
 
     const badColor = null;
     expect(() => {
@@ -47,7 +48,7 @@ describe("Harmony", () => {
   });
 
   test("splitComplementary should return an array of complentary colors, defaulting to HSV.", () => {
-    const { splitComplementary } = harmonies;
+    const { splitComplementary } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -62,7 +63,7 @@ describe("Harmony", () => {
   });
 
   test("splitComplementary should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { splitComplementary } = harmonies;
+    const { splitComplementary } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -77,7 +78,7 @@ describe("Harmony", () => {
   });
 
   test("splitComplementary should throw when passed invalid arguments.", () => {
-    const { splitComplementary } = harmonies;
+    const { splitComplementary } = Harmonies;
 
     const badColor = null;
     expect(() => {
@@ -92,7 +93,7 @@ describe("Harmony", () => {
   });
 
   test("triadic should return an array of complentary colors, defaulting to HSV.", () => {
-    const { triadic } = harmonies;
+    const { triadic } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -107,7 +108,7 @@ describe("Harmony", () => {
   });
 
   test("triadic should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { triadic } = harmonies;
+    const { triadic } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -122,7 +123,7 @@ describe("Harmony", () => {
   });
 
   test("triadic should throw when passed invalid arguments.", () => {
-    const { triadic } = harmonies;
+    const { triadic } = Harmonies;
 
     const badColor = null;
     expect(() => {
@@ -137,7 +138,7 @@ describe("Harmony", () => {
   });
 
   test("tetradic should return an array of complentary colors, defaulting to HSV.", () => {
-    const { tetradic } = harmonies;
+    const { tetradic } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -153,7 +154,7 @@ describe("Harmony", () => {
   });
 
   test("tetradic should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { tetradic } = harmonies;
+    const { tetradic } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -169,7 +170,7 @@ describe("Harmony", () => {
   });
 
   test("tetradic should throw when passed invalid arguments.", () => {
-    const { tetradic } = harmonies;
+    const { tetradic } = Harmonies;
 
     const badColor = null;
     expect(() => {
@@ -184,7 +185,7 @@ describe("Harmony", () => {
   });
 
   test("analagous should return an array of complentary colors, defaulting to HSV.", () => {
-    const { analagous } = harmonies;
+    const { analagous } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -200,7 +201,7 @@ describe("Harmony", () => {
   });
 
   test("analagous should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { analagous } = harmonies;
+    const { analagous } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -216,7 +217,7 @@ describe("Harmony", () => {
   });
 
   test("analagous should throw when passed invalid arguments.", () => {
-    const { analagous } = harmonies;
+    const { analagous } = Harmonies;
 
     const badColor = null;
     expect(() => {
@@ -231,7 +232,7 @@ describe("Harmony", () => {
   });
 
   test("stepSixty should return an array of complentary colors, defaulting to HSV.", () => {
-    const { stepSixty } = harmonies;
+    const { stepSixty } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -249,7 +250,7 @@ describe("Harmony", () => {
   });
 
   test("stepSixty should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { stepSixty } = harmonies;
+    const { stepSixty } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -267,7 +268,7 @@ describe("Harmony", () => {
   });
 
   test("stepSixty should throw when passed invalid arguments.", () => {
-    const { stepSixty } = harmonies;
+    const { stepSixty } = Harmonies;
 
     const badColor = null;
     expect(() => {
@@ -282,7 +283,7 @@ describe("Harmony", () => {
   });
 
   test("analagousTight should return an array of complentary colors, defaulting to HSV.", () => {
-    const { analagousTight } = harmonies;
+    const { analagousTight } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -301,7 +302,7 @@ describe("Harmony", () => {
   });
 
   test("analagousTight should return an array of complentary colors, reformatting to the given color space.", () => {
-    const { analagousTight } = harmonies;
+    const { analagousTight } = Harmonies;
 
     const base = { r: 56, g: 45, b: 106 };
 
@@ -320,7 +321,7 @@ describe("Harmony", () => {
   });
 
   test("analagousTight should throw when passed invalid arguments.", () => {
-    const { analagousTight } = harmonies;
+    const { analagousTight } = Harmonies;
 
     const badColor = null;
     expect(() => {

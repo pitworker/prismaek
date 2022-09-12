@@ -15,19 +15,19 @@ To produce complements, use the provided `harmonies` functions.
 See [Harmonies](#Harmonies).
 
 ```js
-const { harmonies } = require("prismaek");
+import { Harmonies } from "@pitworker/prismaek";
 
 const hsv = { h: 153, s: 0.737, v: 0.596 };
 /* hue: 153 deg, saturation: 73.7%, value: 59.6% */
 
-const complementary = harmonies.complementary(hsv);
+const complementary = Harmonies.complementary(hsv);
 /* [ { h: 153, s: 0.737, v: 0.596 }, { h: 333, s: 0.737, v: 0.596 } ] */
 ```
 
 ![complementary](https://user-images.githubusercontent.com/15038724/118057317-92f8f480-b340-11eb-8a3d-5d3d1ba686ca.png)
 
 ```js
-const triadic = harmonies.triadic(hsv);
+const triadic = Harmonies.triadic(hsv);
 /* [ { h: 153, s: 0.737, v: 0.596 },
      { h: 273, s: 0.737, v: 0.596 },
      { h: 33, s: 0.737, v: 0.596 } ] */
@@ -36,7 +36,7 @@ const triadic = harmonies.triadic(hsv);
 ![triadic](https://user-images.githubusercontent.com/15038724/118057439-d9e6ea00-b340-11eb-9638-2ae4cd9ce2be.png)
 
 ```js
-const analagous = harmonies.analagous(hsv);
+const analagous = Harmonies.analagous(hsv);
 /* [ { h: 153, s: 0.737, v: 0.596 },
      { h: 183, s: 0.737, v: 0.596 },
      { h: 213, s: 0.737, v: 0.596 },
@@ -50,42 +50,38 @@ To explicitly change between color spaces, use the conversion utilities.
 See [Utilities](#Utilities).
 
 ```js
-const { utils } = require("prismaek");
+const { Utils } from "@pitworker/prismaek");
 
 const rgb = { r: 75, g: 21, b: 156 };
 
-const hsv = utils.rgb2HSV(rgb);
+const hsv = Utils.rgb2HSV(rgb);
 /* { h: 264, s: 0.865, v: 0.612 } */
 ```
 
 Validate color spaces
 
 ```js
-const hsvSpace = utils.isHSV(hsv);
+const hsvSpace = Utils.isHSV(hsv);
 /* true */
 
 const badHSV = { h: 361, s: 1.001, v: -0.001 };
 
-const notHsvSpace = utils.isHSV(badHSV);
+const notHsvSpace = Utils.isHSV(badHSV);
 /* false */
 ```
 
 Get the color space of a color, using `cspace`.
 
 ```js
-const { cspace } = utils;
-
 const color = { h: 312, s: 0.431, l: 0.213 };
 
-const colorSpace = cspace(color);
+const colorSpace = Utils.cspace(color);
 /* "hsl" */
 ```
 
 Dynamically transform color spaces using `xspace`.
 
 ```js
-const { xspace } = utils;
-
 const colors = [
   { r: 75, g: 21, b: 156 },
   "#4b159c",
@@ -93,7 +89,7 @@ const colors = [
   { h: 264, s: 0.763, l: 0.347 },
 ];
 
-const rgbColors = colors.map((color) => xspace(color, "rgb"));
+const rgbColors = colors.map((color) => Utils.xspace(color, "rgb"));
 /* [ { r: 75, g: 21, b: 156 },
      { r: 75, g: 21, b: 156 },
      { r: 75, g: 21, b: 156 },
@@ -117,13 +113,11 @@ harmonyName (base [, format])
 _Generates mathematically proven color harmonies._
 
 ```js
-const {
-  harmonies: { complementary },
-} = require("prismaek");
+import { Harmonies } from "@pitworker/prismaek";
 
-complementary({ r: 40, g: 102, b: 106 }, "hex");
+Harmonies.complementary({ r: 40, g: 102, b: 106 }, "hex");
 
-complementary("#009197");
+Harmonies.complementary("#009197");
 ```
 
 ## Effects
@@ -145,15 +139,13 @@ effectName (base [, format] [, step] [, count])
 _Generates a color scheme based on popular effects._
 
 ```js
-const {
-  effects: { shade, tint, tone },
-} = require("prismaek");
+import { Effects } from "@pitworker/prismaek";
 
-shade("#ee0a97", "rgb", 0.05, 10);
+Effects.shade("#ee0a97", "rgb", 0.05, 10);
 
-tint({ r: 40, g: 65, b: 106 }, "hex");
+Effects.tint({ r: 40, g: 65, b: 106 }, "hex");
 
-tone({ h: 359, s: 0.102, l: 0.696 });
+Effects.tone({ h: 359, s: 0.102, l: 0.696 });
 ```
 
 # Utilities
@@ -173,11 +165,9 @@ xspace (color, map)
 _Converts between supported color spaces._
 
 ```js
-const {
-  utils: { xspace },
-} = require("prismaek");
+import { Utils } from "@pitworker/prismaek";
 
-xspace("#ee0a97", "rgb"); // { r: 238, g: 10, b: 151 }
+Utils.xspace("#ee0a97", "rgb"); // { r: 238, g: 10, b: 151 }
 ```
 
 ## cspace
@@ -193,15 +183,13 @@ cspace (color)
 _Returns the color space of a color or null._
 
 ```js
-const {
-  utils: { cspace },
-} = require("prismaek");
+import { Utils } from "@pitworker/prismaek";
 
-cspace("#d5186c"); // "hex"
+Utils.cspace("#d5186c"); // "hex"
 
-cspace({ h: 251, s: 0.891, v: 0.668 }); // "hsv"
+Utils.cspace({ h: 251, s: 0.891, v: 0.668 }); // "hsv"
 
-cspace({ foo: "bar" }); // null
+Utils.cspace({ foo: "bar" }); // null
 ```
 
 ## \<from-space>2\<TO-SPACE>
@@ -217,13 +205,11 @@ cspace({ foo: "bar" }); // null
 _Useful when explicity converting from one color space to another._
 
 ```js
-const {
-  utils: { rgb2Hex, hex2RGB },
-} = require("prismaek");
+import { Utils } from "@pitworker/prismaek";
 
-const hex = rgb2Hex({ r: 163, g: 189, b: 254 }); // #a3bdfe
+const hex = Utils.rgb2Hex({ r: 163, g: 189, b: 254 }); // #a3bdfe
 
-hex2RGB(hex); // { r: 163, g: 189, b: 254 }
+Utils.hex2RGB(hex); // { r: 163, g: 189, b: 254 }
 ```
 
 # Contributing

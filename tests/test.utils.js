@@ -1,10 +1,11 @@
 "use strict";
 
-const { utils } = require("../index");
+import { Utils } from "../index.js";
+//const { utils } = require("../index");
 
 describe("Color space check", () => {
   test("isRGB should return a boolean true/false depending on if the passed argument is in proper form.", () => {
-    const { isRGB } = utils;
+    const { isRGB } = Utils;
 
     const undef = undefined;
     expect(isRGB(undef)).toEqual(false);
@@ -26,7 +27,7 @@ describe("Color space check", () => {
   });
 
   test("isHex should return a boolean true/false depending on if the passed argument is in proper form.", () => {
-    const { isHex } = utils;
+    const { isHex } = Utils;
 
     const undef = undefined;
     expect(isHex(undef)).toEqual(false);
@@ -51,7 +52,7 @@ describe("Color space check", () => {
   });
 
   test("isHSV should return a boolean true/false depending on if the passed argument is in proper form.", () => {
-    const { isHSV } = utils;
+    const { isHSV } = Utils;
 
     const undef = undefined;
     expect(isHSV(undef)).toEqual(false);
@@ -76,7 +77,7 @@ describe("Color space check", () => {
   });
 
   test("isHSL should return a boolean true/false depending on if the passed argument is in proper form.", () => {
-    const { isHSL } = utils;
+    const { isHSL } = Utils;
 
     const undef = undefined;
     expect(isHSL(undef)).toEqual(false);
@@ -103,7 +104,7 @@ describe("Color space check", () => {
 
 describe("Color conversion", () => {
   test("hex2RGB should properly convert color space from hex to RGB.", () => {
-    const { hex2RGB } = utils;
+    const { hex2RGB } = Utils;
 
     const bases = ["#289866", "#2E2898", "#98285A", "#929828"];
     const expecteds = [
@@ -122,7 +123,7 @@ describe("Color conversion", () => {
   });
 
   test("hex2RGB should throw when passed an invalid argument.", () => {
-    const { hex2RGB } = utils;
+    const { hex2RGB } = Utils;
 
     const notHex = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -136,7 +137,7 @@ describe("Color conversion", () => {
   });
 
   test("hex2HSV should properly convert color space from hex to HSV.", () => {
-    const { hex2HSV } = utils;
+    const { hex2HSV } = Utils;
 
     const bases = ["#487A20", "#20757A", "#51207A", "#7A2420"];
     const expecteds = [
@@ -155,7 +156,7 @@ describe("Color conversion", () => {
   });
 
   test("hex2HSV should throw when passed an invalid argument.", () => {
-    const { hex2HSV } = utils;
+    const { hex2HSV } = Utils;
 
     const notHex = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -169,7 +170,7 @@ describe("Color conversion", () => {
   });
 
   test("hex2HSL should properly convert color space from hex to HSL.", () => {
-    const { hex2HSL } = utils;
+    const { hex2HSL } = Utils;
 
     const bases = ["#289866", "#2E2898", "#98285A", "#929828"];
     const expecteds = [
@@ -188,7 +189,7 @@ describe("Color conversion", () => {
   });
 
   test("hex2HSL should throw when passed an invalid argument.", () => {
-    const { hex2HSL } = utils;
+    const { hex2HSL } = Utils;
 
     const notHex = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -202,7 +203,7 @@ describe("Color conversion", () => {
   });
 
   test("rgb2Hex should properly convert color space from RGB to hex.", () => {
-    const { rgb2Hex } = utils;
+    const { rgb2Hex } = Utils;
 
     const bases = [
       { r: 40, g: 152, b: 102 },
@@ -222,7 +223,7 @@ describe("Color conversion", () => {
   });
 
   test("rgb2Hex should throw when passed an invalid argument.", () => {
-    const { rgb2Hex } = utils;
+    const { rgb2Hex } = Utils;
 
     const notRgb = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -236,7 +237,7 @@ describe("Color conversion", () => {
   });
 
   test("rgb2HSV should properly convert color space from RGB to HSV.", () => {
-    const { rgb2HSV } = utils;
+    const { rgb2HSV } = Utils;
 
     const bases = [
       { r: 40, g: 152, b: 102 },
@@ -262,7 +263,7 @@ describe("Color conversion", () => {
   });
 
   test("rgb2HSV should throw when passed an invalid argument.", () => {
-    const { rgb2HSV } = utils;
+    const { rgb2HSV } = Utils;
 
     const notRgb = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -276,7 +277,7 @@ describe("Color conversion", () => {
   });
 
   test("rgb2HSL should properly convert color space from RGB to HSL.", () => {
-    const { rgb2HSL } = utils;
+    const { rgb2HSL } = Utils;
 
     const bases = [
       { r: 40, g: 152, b: 102 },
@@ -302,7 +303,7 @@ describe("Color conversion", () => {
   });
 
   test("rgb2HSL should throw when passed an invalid argument.", () => {
-    const { rgb2HSL } = utils;
+    const { rgb2HSL } = Utils;
 
     const notRgb = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -316,7 +317,7 @@ describe("Color conversion", () => {
   });
 
   test("hsv2RGB should properly convert color space from HSV to RGB.", () => {
-    const { hsv2RGB } = utils;
+    const { hsv2RGB } = Utils;
 
     const bases = [
       { h: 153, s: 0.737, v: 0.596 },
@@ -342,7 +343,7 @@ describe("Color conversion", () => {
   });
 
   test("hsv2RGB should throw when passed an invalid argument.", () => {
-    const { hsv2RGB } = utils;
+    const { hsv2RGB } = Utils;
 
     const notHsv = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -356,7 +357,7 @@ describe("Color conversion", () => {
   });
 
   test("hsv2Hex should properly convert color space from HSV to hex.", () => {
-    const { hsv2Hex } = utils;
+    const { hsv2Hex } = Utils;
 
     const bases = [
       { h: 153, s: 0.737, v: 0.596 },
@@ -375,7 +376,7 @@ describe("Color conversion", () => {
   });
 
   test("hsv2Hex should throw when passed an invalid argument.", () => {
-    const { hsv2Hex } = utils;
+    const { hsv2Hex } = Utils;
 
     const notHsv = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -389,7 +390,7 @@ describe("Color conversion", () => {
   });
 
   test("hsv2HSL should properly convert color space from HSV to HSL.", () => {
-    const { hsv2HSL } = utils;
+    const { hsv2HSL } = Utils;
 
     const bases = [
       { h: 153, s: 0.737, v: 0.596 },
@@ -413,7 +414,7 @@ describe("Color conversion", () => {
   });
 
   test("hsv2HSL should throw when passed an invalid argument.", () => {
-    const { hsv2HSL } = utils;
+    const { hsv2HSL } = Utils;
 
     const notHsv = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -427,7 +428,7 @@ describe("Color conversion", () => {
   });
 
   test("hsl2RGB should properly convert color space from HSL to RGB.", () => {
-    const { hsl2RGB } = utils;
+    const { hsl2RGB } = Utils;
 
     const bases = [
       { h: 0, s: 0.0, l: 0.0 },
@@ -455,7 +456,7 @@ describe("Color conversion", () => {
   });
 
   test("hsl2RGB should throw when passed an invalid argument.", () => {
-    const { hsl2RGB } = utils;
+    const { hsl2RGB } = Utils;
 
     const notHsl = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -469,7 +470,7 @@ describe("Color conversion", () => {
   });
 
   test("hsl2Hex should properly convert color space from HSL to Hex.", () => {
-    const { hsl2Hex } = utils;
+    const { hsl2Hex } = Utils;
 
     const bases = [
       { h: 153, s: 0.583, l: 0.376 },
@@ -488,7 +489,7 @@ describe("Color conversion", () => {
   });
 
   test("hsl2Hex should throw when passed an invalid argument.", () => {
-    const { hsl2Hex } = utils;
+    const { hsl2Hex } = Utils;
 
     const notHsl = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -502,7 +503,7 @@ describe("Color conversion", () => {
   });
 
   test("hsl2HSV should properly convert color space from HSL to HSV.", () => {
-    const { hsl2HSV } = utils;
+    const { hsl2HSV } = Utils;
 
     const bases = [
       { h: 153, s: 0.583, l: 0.376 },
@@ -526,7 +527,7 @@ describe("Color conversion", () => {
   });
 
   test("hsl2HSV should throw when passed an invalid argument.", () => {
-    const { hsl2HSV } = utils;
+    const { hsl2HSV } = Utils;
 
     const notHsl = { foo: "bar", baz: "qux", quux: "quuz" };
     expect(() => {
@@ -542,7 +543,7 @@ describe("Color conversion", () => {
 
 describe("Utility", () => {
   test("cspace should return the string name of the color space for the provided color.", () => {
-    const { cspace } = utils;
+    const { cspace } = Utils;
 
     const rgb = { r: 40, g: 20, b: 0 };
     expect(cspace(rgb)).toEqual("rgb");
@@ -558,7 +559,7 @@ describe("Utility", () => {
   });
 
   test("cspace should return null for invalid/unsupported color spaces.", () => {
-    const { cspace } = utils;
+    const { cspace } = Utils;
 
     const badRgb = { r: 40, g: 20, c: 0 };
     expect(cspace(badRgb)).toEqual(null);
@@ -574,7 +575,7 @@ describe("Utility", () => {
   });
 
   test("xspace should transform the given color into the provided space.", () => {
-    const { xspace } = utils;
+    const { xspace } = Utils;
 
     const rgb = { r: 0, g: 0, b: 0 };
     const hex = "000000";
@@ -607,7 +608,7 @@ describe("Utility", () => {
   });
 
   test("xspace should throw when provided with an invalid color or map.", () => {
-    const { xspace } = utils;
+    const { xspace } = Utils;
 
     const badRgb = { r: 12, q: 3 };
     const goodMap = "hex";
@@ -629,7 +630,7 @@ describe("Utility", () => {
   });
 
   test("shiftDegrees should return a numeral representation of the resulting degree addition, wrt 360.", () => {
-    const { shiftDegrees } = utils;
+    const { shiftDegrees } = Utils;
 
     expect(90).toEqual(shiftDegrees(0, 90));
 
