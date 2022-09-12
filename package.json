@@ -1,6 +1,6 @@
 {
   "name": "prismaek",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Generate colors and color schemes using maths.",
   "main": "index.js",
   "type": "module",
@@ -11,8 +11,11 @@
     "lint": "npx prettier --check .",
     "lint-fix": "echo \"Linting with Prettier...\" && npx prettier --write ."
   },
-  "author": "Michael Sterpka <michaelsterpka@gmail.com> (https://github.com/mster)",
-  "license": "MIT",
+  "author": [
+    "Michael Sterpka <michaelsterpka@gmail.com> (https://github.com/mster)",
+    "Swan Carpenter <swanio@duck.com> (https://github.com/pitworker)"
+  ],
+    "license": "MIT",
   "keywords": [
     "color",
     "scheme",

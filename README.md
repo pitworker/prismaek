@@ -5,7 +5,7 @@ Generate color complements, shades, tints, and tones. Convert between color spac
 # Install
 
 ```
-$ npm install prismaek
+$ npm install @pitworker/prismaek
 ```
 
 # Usage
