@@ -1,7 +1,7 @@
 {
-  "name": "prismaek",
+  "name": "@pitworker/prismaek",
   "version": "0.3.0",
-  "description": "Generate colors and color schemes using maths.",
+  "description": "Generate colors and color schemes using maths. ES6 compatible.",
   "main": "index.js",
   "type": "module",
   "scripts": {
