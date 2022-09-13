@@ -1,4 +1,4 @@
-# Prismaek [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.com/mster/prismaek.svg?branch=main)](https://travis-ci.com/mster/prismaek) [![Coverage Status](https://coveralls.io/repos/github/mster/prismaek/badge.svg?branch=main)](https://coveralls.io/github/mster/prismaek?branch=main)
+# Prismaek [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 A fork of Michael Sterpka's `prismaek` package with ES6 formatting.
 
