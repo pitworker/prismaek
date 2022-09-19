@@ -1,6 +1,6 @@
 # Prismaek [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-A fork of Michael Sterpka's `prismaek` package with ES6 formatting.
+A fork of Michael Sterpka's [`prismaek`](https://www.npmjs.com/package/prismaek) package with ES6 formatting.
 
 Generate color complements, shades, tints, and tones. Convert between color spaces.
 
@@ -52,7 +52,7 @@ To explicitly change between color spaces, use the conversion utilities.
 See [Utilities](#Utilities).
 
 ```js
-const { Utils } from "@pitworker/prismaek");
+import { Utils } from "@pitworker/prismaek");
 
 const rgb = { r: 75, g: 21, b: 156 };
 
@@ -213,7 +213,3 @@ const hex = Utils.rgb2Hex({ r: 163, g: 189, b: 254 }); // #a3bdfe
 
 Utils.hex2RGB(hex); // { r: 163, g: 189, b: 254 }
 ```
-
-# Contributing
-
-See our [guidelines](https://github.com/mster/prismaek/blob/main/CONTRIBUTING.md)
